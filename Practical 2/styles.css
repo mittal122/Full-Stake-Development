@@ -1,0 +1,117 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  /* New warm background gradient */
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #333; /* Darker text for better readability on light backgrounds */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main App Container */
+.weather-container {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+#city-search-input {
+  padding: 12px;
+  width: 70%;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+#search-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #fda085; /* Button color matching the theme */
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#search-button:hover {
+  background: #f6d365;
+}
+
+/* Weather Display Card */
+.weather-display {
+  margin-top: 20px;
+}
+
+#loader {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+#weather-info {
+  margin-top: 20px;
+}
+
+#city-name-display {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#temperature-display {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#description-display {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Utility class to hide elements */
+.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #aaa;
+}

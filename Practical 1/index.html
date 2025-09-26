@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    let result = { p: 0, c: 0, j: 0 };
+
+    function vote(lang) {
+      result[lang]++;
+      document.getElementById('python-count').textContent = result.p;
+      document.getElementById('cpp-count').textContent = result.c;
+      document.getElementById('java-count').textContent = result.j;
+    }
+  </script>
+  <title>Voting Practical - Mittal Domaidya D24CS122</title>
+</head>
+<body>
+  <div class="mainbox">
+    <h1>Programming Language Voting</h1>
+
+    <div class="btnbox">
+      <button onclick="vote('p')" id="btn-py">Python</button>
+      <button onclick="vote('c')" id="btn-cpp">C++</button>
+      <button onclick="vote('j')" id="btn-java">Java</button>
+    </div>
+
+    <h2>Results</h2>
+    <table class="result-table">
+      <tr><th>Language</th><th>Votes</th></tr>
+      <tr><td>Python</td><td id="python-count">0</td></tr>
+      <tr><td>C++</td><td id="cpp-count">0</td></tr>
+      <tr><td>Java</td><td id="java-count">0</td></tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mainbox {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 350px;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.btnbox {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  padding: 10px 18px;
+  margin: 0.5rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#btn-py {
+  background-color: #2ecc71; /* Green */
+}
+#btn-cpp {
+  background-color: #e67e22; /* Orange */
+}
+#btn-java {
+  background-color: #9b59b6; /* Purple */
+}
+
+button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+h2 {
+  margin-top: 1rem;
+  color: #333;
+}
+
+.result-table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.result-table th, .result-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
