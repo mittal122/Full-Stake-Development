@@ -1,0 +1,95 @@
+/* Entire Page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* FLEX CONTAINER for both cards side by side */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* Makes it responsive on smaller screens */
+}
+
+/* Card Base Style */
+.counter-container,
+.name-container {
+    background: #eaf4ff;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.counter-container:hover,
+.name-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Counter Section */
+.counter-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0a2f66;
+    margin-bottom: 20px;
+}
+
+.counter-btn {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: #367cff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.counter-btn:hover {
+    background-color: #255edc;
+}
+
+/* Name Section */
+.name-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #0a2f66;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.output-group {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #333;
+}

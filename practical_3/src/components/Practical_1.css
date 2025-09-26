@@ -1,0 +1,37 @@
+/* New distinct look for Practical 1 component */
+.practical1-container{
+    margin: 48px auto;
+    max-width: 720px;
+    padding: 16px;
+}
+.practical1-container.alt{
+    background: linear-gradient(180deg, #f1f5f9, #ffffff);
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+.practical1-title{
+    text-align:center;
+    font-size: clamp(18px, 3vw, 24px);
+    color:#0f172a;
+    margin-bottom: 20px;
+}
+.clock-cards{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 14px;
+}
+.clock-cards .card{
+    background: #0ea5e9;
+    color: #f8fafc;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 6px 20px rgba(14, 165, 233, .25);
+}
+.clock-cards .card.time{ background: #10b981; box-shadow: 0 6px 20px rgba(16, 185, 129, .25); }
+.clock-cards .label{ display:block; font-size: 12px; opacity: .9; letter-spacing: .5px; }
+.clock-cards .value{ display:block; font-size: clamp(18px, 4vw, 28px); font-weight:700; }
+
+@media (max-width: 520px){
+    .clock-cards{ grid-template-columns: 1fr; }
+}
