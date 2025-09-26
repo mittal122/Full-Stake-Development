@@ -1,0 +1,14 @@
+[2025-09-16 12:00:01] ERROR: Database connection failed
+[2025-09-16 12:05:43] WARNING: Slow response time
+[2025-09-16 12:10:15] ERROR: Unable to fetch user data
+[2025-09-16 12:15:30] INFO: User login successful
+[2025-09-16 12:20:50] ERROR: File not found
+[2025-09-16 12:25:00] WARNING: High memory usage detected
+[2025-09-16 12:30:22] INFO: Scheduled task completed
+[2025-09-16 12:35:45] ERROR: Permission denied
+[2025-09-16 12:40:10] INFO: System rebooted successfully
+[2025-09-16 12:45:33] WARNING: Disk space running low
+[2025-09-16 12:50:55] ERROR: Network timeout
+[2025-09-16 12:55:12] INFO: Backup completed
+[2025-09-16 13:00:00] WARNING: CPU temperature high
+[2025-09-16 13:05:27] ERROR: Invalid user input
