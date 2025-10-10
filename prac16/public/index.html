@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact — Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#">My Portfolio</a>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#contact" class="active">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="contact" class="card contact-card">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h1>Let's build something great</h1>
+            <p>Have a project or a question? Fill the form and I'll get back to you within 48 hours.</p>
+
+            <ul class="meta">
+              <li><strong>Email</strong><br>hello@example.com</li>
+              <li><strong>Location</strong><br>Your City, Country</li>
+            </ul>
++ 
+          </div>
++
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Name *</label>
+                <input id="name" name="name" required placeholder="Your full name">
+              </div>
++
+              <div class="field">
+                <label for="email">Email *</label>
++                <input id="email" name="email" type="email" required placeholder="you@domain.com">
++              </div>
++            </div>
++
++            <div class="field">
++              <label for="subject">Subject</label>
++              <input id="subject" name="subject" placeholder="Brief subject">
++            </div>
++
++            <div class="field">
++              <label for="message">Message *</label>
++              <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..."></textarea>
++            </div>
++
++            <div class="form-actions">
++              <button type="submit" class="btn-primary">Send Message</button>
++              <div id="status" role="status" aria-live="polite"></div>
++            </div>
++          </form>
++        </div>
++      </section>
++    </main>
++
++    <footer class="site-footer">
++      <div class="container">© <span id="year"></span> My Portfolio</div>
++    </footer>
++
++    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
++    <script src="contact.js"></script>
++  </body>
++</html>
++
