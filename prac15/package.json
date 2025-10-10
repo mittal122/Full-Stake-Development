@@ -1,0 +1,17 @@
+{
+  "name": "library-portal",
+  "version": "1.0.0",
+  "description": "Simple Express app demonstrating session-based login/logout for a library portal",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
