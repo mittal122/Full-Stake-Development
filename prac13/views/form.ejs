@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Income Calculator</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    // Small client-side helper for nicer UX: prevent non-numeric chars and format as user types
+    function formatCurrencyInput(e){
+      const el = e.target;
+      let v = el.value.replace(/,/g, '').replace(/[^0-9.]/g, '');
+      if(v === ''){ el.value = ''; return; }
+      // Keep only one decimal point
+      const parts = v.split('.');
+      if(parts.length > 2) v = parts[0] + '.' + parts.slice(1).join('');
+      // Format integer part with commas
+      const [intPart, decPart] = v.split('.');
+      const intFormatted = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      el.value = decPart !== undefined ? intFormatted + '.' + decPart : intFormatted;
+    }
+
+    function attachFormatting(){
+      const inputs = document.querySelectorAll('.money-input');
+      inputs.forEach(i => {
+        i.addEventListener('input', formatCurrencyInput);
+        i.addEventListener('blur', (e) => {
+          // ensure two fixed decimals on blur if value present
+          if(e.target.value.trim() === '') return;
+          let num = Number(e.target.value.replace(/,/g, ''));
+          if(isNaN(num)) return;
+          e.target.value = num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', attachFormatting);
+  </script>
+</head>
+<body>
+  <main class="page">
+    <div class="card">
+      <header class="card-header">
+        <h1>Income Calculator</h1>
+        <p class="subtitle">Quickly add two income sources and get the total.</p>
+      </header>
++
+      <% if (errors && errors.length) { %>
+        <div class="errors" role="alert">
++          <ul>
++            <% errors.forEach(function(err) { %>
++              <li><%= err.msg %></li>
++            <% }); %>
++          </ul>
++        </div>
++      <% } %>
++
+      <form class="form" action="/calculate" method="POST" novalidate>
+        <div class="field">
+          <label for="sourceA">Income — Source A</label>
++          <div class="input-row">
++            <span class="input-prefix">$</span>
++            <input id="sourceA" name="sourceA" class="money-input" type="text" inputmode="decimal" value="<%= values.sourceA %>" autocomplete="off" placeholder="0.00" />
++          </div>
++        </div>
++
+        <div class="field">
++          <label for="sourceB">Income — Source B</label>
++          <div class="input-row">
++            <span class="input-prefix">$</span>
++            <input id="sourceB" name="sourceB" class="money-input" type="text" inputmode="decimal" value="<%= values.sourceB %>" autocomplete="off" placeholder="0.00" />
++          </div>
++        </div>
++
+        <div class="actions">
++          <button type="submit" class="btn-primary">Calculate Total</button>
++          <button type="button" class="btn-secondary" onclick="document.querySelector('#sourceA').value=''; document.querySelector('#sourceB').value='';">Clear</button>
++        </div>
++      </form>
++
+      <% if (total !== null) { %>
++        <section class="result" aria-live="polite">
++          <h2>Total Income</h2>
++          <p class="amount">$<%= Number(total).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) %></p>
++        </section>
++      <% } %>
++
+      <footer class="card-footer">
++        <small>Calculated on the server for accuracy • Built with Express & EJS</small>
++      </footer>
++    </div>
++  </main>
++</body>
++</html>
++
